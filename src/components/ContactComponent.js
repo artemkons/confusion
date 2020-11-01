@@ -17,8 +17,7 @@ class Contact extends React.Component {
     }
 
     handleSubmit(values){
-        console.log("Current State is: " + JSON.stringify(values));
-        alert("Current State is: " + JSON.stringify(values));
+        this.props.postFeedback(values.firstname, values.lastname, values.telnum, values.mail, values.agree, values.contactType, values.message)
         this.props.resetFeedbackForm();
     }
 
@@ -178,7 +177,7 @@ class Contact extends React.Component {
                             <Row className="form-group">
                                 <Label htmlFor="message" md={2}>Your FeedBack</Label>
                                 <Col md={10}>
-                                    <Control.textarea model=".messsage" id="message" name="message" rows="12"  className="form-control"/>
+                                    <Control.textarea model=".message" id="message" name="message" rows="12"  className="form-control"/>
                                 </Col>
                             </Row>
                             <Row className="form-group">
